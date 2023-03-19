@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react"
+import { Message } from "./Message";
 
 export const SimpleForm = () => {
 
@@ -20,11 +21,11 @@ export const SimpleForm = () => {
     }
 
     useEffect(() => {
-      console.log("form is changing and I can detect it at least at first nesting level");
+    //   console.log("form is changing and I can detect it at least at first nesting level");
     }, [formState]); 
 
     useEffect(() => {
-      console.log("form is changing and I can detect it at least at first nesting level");
+    //   console.log("form is changing and I can detect it at least at first nesting level");
     }, [email]); 
     
 
@@ -43,6 +44,10 @@ export const SimpleForm = () => {
             value={username}
             onChange={onInputChange}
         />        
+
+        {
+            username === "strider2" && <Message />
+        }
 
         <input  
             type='text'
