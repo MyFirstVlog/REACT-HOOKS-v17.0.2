@@ -1,19 +1,31 @@
 
 
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { useCounter } from '../hooks'
-import { Small } from './Small';
 
-export const Memorize = () => {
 
-    const {counter, increment} = useCounter(10);
+const heavyStuff = (iteratiuonNumber = 100) => {
 
+    for(let a = 0; a <= iteratiuonNumber; a ++){
+        console.log("Ahi vamos !!!");
+    };
+
+    return `Me renderice ${iteratiuonNumber} veces`;
+};
+
+export const MemoHook = () => {
+
+    const {counter, increment} = useCounter(4000);
     const [show, setShow] = useState(true);
+
+    const messageMemorized = useMemo(() => heavyStuff(counter), [counter]);
 
     return (
         <>
-            <h1>Counter <Small value={counter}/> </h1>
+            <h1>Counter <small>{counter}</small> </h1>
             <hr />
+
+            <h4>{messageMemorized}</h4>
 
             <button
                 className='btn btn-primary'

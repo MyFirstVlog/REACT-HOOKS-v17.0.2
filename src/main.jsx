@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Memorize } from './06-memos/Memorize';
+import { MemoHook } from './06-memos/MemoHook';
+// import { Memorize } from './06-memos/Memorize';
 // import { Layout } from './04-useLayoutEffect/Layout';
 // import { MultipleCustomHooks } from './examples/MultipleCustomHook';
 // import { SimpleForm } from './02-useEffect/SimpleForm';
@@ -13,7 +14,7 @@ import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Memorize/>
+    <MemoHook/>
   </React.StrictMode>,
   document.getElementById('root')
 );
