@@ -8,7 +8,6 @@ export const TodoAdd = ({onNewTodo}) => {
     });
 
     const onHandleSubmit = (e) => {
-        console.log({e});
         e.preventDefault();
         const newTodo = {
             id: new Date().getTime(),
