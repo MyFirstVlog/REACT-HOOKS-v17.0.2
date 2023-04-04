@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Padre } from './07-tarea-memo/Padre';
+// import { Padre } from './07-tarea-memo/Padre';
 // import { CallbackHook } from './06-memos/CallbackHook';
 // import { MemoHook } from './06-memos/MemoHook';
 // import { Memorize } from './06-memos/Memorize';
@@ -13,10 +13,12 @@ import { Padre } from './07-tarea-memo/Padre';
 // import { FocusScreen } from './useRef/FocusScreen';
 
 import './index.css';
-import './08-useReducer/intro-reducer'
-// ReactDOM.render(
-//   <React.StrictMode>
-//     <Padre/>
-//   </React.StrictMode>,
-//   document.getElementById('root')
-// );
+import { TodoApp } from './08-useReducer/TodoApp';
+// import './08-useReducer/intro-reducer'
+
+ReactDOM.render(
+  <React.StrictMode>
+    <TodoApp/>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
