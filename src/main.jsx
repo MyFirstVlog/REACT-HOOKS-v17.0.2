@@ -26,9 +26,9 @@ import { BrowserRouter } from 'react-router-dom';
 // const router = getRoutes()
 
 ReactDOM.render(
-    <React.StrictMode>
+  <BrowserRouter>
       <MainApp />
-    </React.StrictMode>
+  </BrowserRouter>
 ,
     document.getElementById('root')
 );

@@ -1,38 +1,32 @@
-import React from 'react'
-import { Navigate, RouterProvider, createBrowserRouter,  Outlet, Link  } from 'react-router-dom';
+import { Navigate, Route, Routes, Link } from 'react-router-dom';
+
+import { UserProvider } from './context/UserProvider';
+import { HomePage } from './HomePage';
 import { AboutPage } from './AboutPage';
 import { LoginPage } from './LoginPage';
-import { HomePage } from './HomePage';
+import { Navbar } from './Navbar';
 
 
 export const MainApp = () => {
-  const routerDom = createBrowserRouter([
-    {
-      path: "/",
-      element: <HomePage />
-    },
-    {
-      path: "about",
-      element: <AboutPage />
-    },
-    {
-      path: "login",
-      element: <LoginPage />
-    },
-    {
-      path: "/*",
-      element: <Navigate to={"/about"} />
-    },
-  ]);
-
   return (
-    <>
-        <h1>MainApp</h1>
-        <Link to={`/`}>Home</Link>
-        <Link to={`/about`}>About</Link>
-        <Link to={`/login`}>Login</Link>
+    <UserProvider>
+        {/* <h1>MainApp</h1> */}
+        {/* <Link to="/">Home</Link>
+        <Link to="/about">About</Link>
+        <Link to="/login">Login</Link> */}
+        <Navbar />
         <hr />
-        <RouterProvider router={routerDom } />
-    </>
+
+
+        <Routes>
+          <Route path="/" element={ <HomePage /> } />
+          <Route path="about" element={ <AboutPage /> } />
+          <Route path="login" element={ <LoginPage /> } />
+
+          {/* <Route path="/*" element={ <LoginPage /> } /> */}
+          <Route path="/*" element={ <Navigate to="/about" /> } />
+
+        </Routes>
+    </UserProvider>
   )
 }
