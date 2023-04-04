@@ -11,14 +11,24 @@ import ReactDOM from 'react-dom';
 // import { CounterWithCustomHook } from './01-useState/CounterWithCustomHook';
 // import { HooksApp } from './HooksApp';
 // import { FocusScreen } from './useRef/FocusScreen';
+// import { TodoApp } from './08-useReducer/TodoApp';
+// import './08-useReducer/intro-reducer'
+import { MainApp } from './09-useContext/MainApp';
 
 import './index.css';
-import { TodoApp } from './08-useReducer/TodoApp';
-// import './08-useReducer/intro-reducer'
+
+import { AboutPage } from './09-useContext/AboutPage';
+import { LoginPage } from './09-useContext/LoginPage';
+import { HomePage } from './09-useContext/HomePage';
+import { BrowserRouter } from 'react-router-dom';
+// import { getRoutes } from './09-useContext/routes/routes';
+
+// const router = getRoutes()
 
 ReactDOM.render(
-  <React.StrictMode>
-    <TodoApp/>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+      <MainApp />
+    </React.StrictMode>
+,
+    document.getElementById('root')
 );
