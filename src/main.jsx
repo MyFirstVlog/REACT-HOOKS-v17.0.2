@@ -13,10 +13,10 @@ import { Padre } from './07-tarea-memo/Padre';
 // import { FocusScreen } from './useRef/FocusScreen';
 
 import './index.css';
-
-ReactDOM.render(
-  <React.StrictMode>
-    <Padre/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import './08-useReducer/intro-reducer'
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Padre/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// );
