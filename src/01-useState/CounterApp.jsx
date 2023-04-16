@@ -22,7 +22,7 @@ export const CounterApp = () => {
 
             <hr/>
 
-            <button className="btn" onClick={() => sumCounter1()}>+1</button>
+            <button className="btn" onClick={sumCounter1}>+1</button>
         </>
     )
 }

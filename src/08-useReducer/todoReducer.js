@@ -1,7 +1,11 @@
+import { combineReducers } from "redux";
 
 
+const init = () => {
+    return JSON.parse(localStorage.getItem("todos")) || [];
+};
 
-export const todoReducer = (state = [], action) => {
+export const todoReducer = (state = init(), action) => {
 
     console.log({state, action})
 
@@ -27,6 +31,10 @@ export const todoReducer = (state = [], action) => {
             })
 
         default:
-            return initialState;
+            return state;
     }
 }
+
+export const todosReducerInStore  = combineReducers({
+    todoReducer
+});

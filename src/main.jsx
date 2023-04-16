@@ -1,5 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { TodoApp } from './08-useReducer/TodoApp';
+import './index.css';
+import { Provider } from 'react-redux';
+import {createStore } from 'redux';
+import { todosReducerInStore } from './08-useReducer/todoReducer';
+
+
+// import { store } from './08-useReducer/store/store';
 // import { Padre } from './07-tarea-memo/Padre';
 // import { CallbackHook } from './06-memos/CallbackHook';
 // import { MemoHook } from './06-memos/MemoHook';
@@ -11,24 +19,22 @@ import ReactDOM from 'react-dom';
 // import { CounterWithCustomHook } from './01-useState/CounterWithCustomHook';
 // import { HooksApp } from './HooksApp';
 // import { FocusScreen } from './useRef/FocusScreen';
-// import { TodoApp } from './08-useReducer/TodoApp';
 // import './08-useReducer/intro-reducer'
-import { MainApp } from './09-useContext/MainApp';
-
-import './index.css';
-
-import { AboutPage } from './09-useContext/AboutPage';
-import { LoginPage } from './09-useContext/LoginPage';
-import { HomePage } from './09-useContext/HomePage';
-import { BrowserRouter } from 'react-router-dom';
+// import { MainApp } from './09-useContext/MainApp';
+// import { AboutPage } from './09-useContext/AboutPage';
+// import { LoginPage } from './09-useContext/LoginPage';
+// import { HomePage } from './09-useContext/HomePage';
+// import { BrowserRouter } from 'react-router-dom';
 // import { getRoutes } from './09-useContext/routes/routes';
-
 // const router = getRoutes()
 
+
+const store = createStore(todosReducerInStore);
+
 ReactDOM.render(
-  <BrowserRouter>
-      <MainApp />
-  </BrowserRouter>
+  <Provider  store={store}>
+    <TodoApp/>
+  </Provider>
 ,
     document.getElementById('root')
 );

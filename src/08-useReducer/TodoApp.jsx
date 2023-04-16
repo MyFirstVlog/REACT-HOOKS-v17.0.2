@@ -3,27 +3,15 @@ import { useReducer } from 'react'
 import { todoReducer } from './todoReducer'
 import { TodoList } from './components/TodoList'
 import { TodoAdd } from './components/TodoAdd'
-
-const initialState = [
-    // {
-    //     id: new Date().getMilliseconds(),
-    //     description: "Recolectas la piedra del alma",
-    //     done: false,
-    // },      
-    // {
-    //     id: new Date().getMilliseconds(),
-    //     description: "Recolectas la piedra del poder",
-    //     done: false,
-    // },      
-]
-
-const init = () => {
-    return JSON.parse(localStorage.getItem("todos")) || [];
-};
+import { useDispatch, useSelector } from 'react-redux'
 
 export const TodoApp = () => {
+    // const [todos, dispatch] = useReducer(todoReducer, initialState, init); //init use for loading big amount of data
 
-    const [todos, dispatch] = useReducer(todoReducer, initialState, init); //init use for loading big amount of data
+    const dispatch = useDispatch();
+    const todos = useSelector(state => state.todoReducer);
+
+    console.log(todos);
 
     useEffect(() => {
       localStorage.setItem("todos", JSON.stringify(todos));
@@ -54,7 +42,7 @@ export const TodoApp = () => {
 
   return (
     <>
-        <h1>TodoApp (10), <small>pendientes: 7</small></h1>
+        <h1>TodoApp ({todos.filter(todo => !todo.done).length}), <small>pendientes: {todos.filter(todo => todo.done).length}</small></h1>
         <hr />
 
         <div className="row">

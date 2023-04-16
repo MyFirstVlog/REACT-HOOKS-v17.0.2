@@ -2,6 +2,7 @@
 
 import React, { useMemo, useState } from 'react'
 import { useCounter } from '../hooks'
+import { Small } from './Small';
 
 
 const heavyStuff = (iteratiuonNumber = 100) => {
@@ -22,7 +23,7 @@ export const MemoHook = () => {
 
     return (
         <>
-            <h1>Counter <small>{counter}</small> </h1>
+            <h1>Counter <Small value={counter}/> </h1>
             <hr />
 
             <h4>{messageMemorized}</h4>
